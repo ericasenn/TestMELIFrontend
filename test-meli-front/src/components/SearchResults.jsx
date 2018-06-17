@@ -1,0 +1,27 @@
+import React, { Component } from 'react';
+import Breadcrumb from './Breadcrumb.jsx';
+import SearchResultItem from './SearchResultItem.jsx';
+
+class SearchResults extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render () {
+        let searchResults = <div></div>;
+
+        if (this.props.data !== undefined) {
+            console.log('Props', this.props.data.items);
+            let searchResultItems = this.props.data.items.map(item => <SearchResultItem item={ item } />);
+            searchResults =
+                <div>
+                    <Breadcrumb categories={this.props.data.categories}> </Breadcrumb>
+                    { searchResultItems }
+                </div>
+        }
+
+        return searchResults;
+    }
+}
+
+export default SearchResults;
