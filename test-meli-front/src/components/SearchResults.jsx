@@ -11,7 +11,6 @@ class SearchResults extends Component {
         let searchResults = <div></div>;
 
         if (this.props.data !== undefined) {
-            console.log('Props', this.props.data.items);
             let searchResultItems = this.props.data.items.map(item => <SearchResultItem item={ item } />);
             searchResults =
                 <div>
