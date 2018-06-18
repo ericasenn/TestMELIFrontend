@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
-class SearchResultItem extends Component {
-    constructor(props) {
-        super(props);
-    }
 
-    render () {
+class Item extends React.Component {
+
+    render() {
 
         let price = this.props.item.price.amount+'';
         price = price.split('.');
@@ -20,22 +17,24 @@ class SearchResultItem extends Component {
             <div>
                 <div>
                     <div>
-                        <Link to={ '/items/' + this.props.item.id }>
+                        <div>
                             <div>
                                 <img src={ this.props.item.picture } alt={ this.props.item.title } />
                             </div>
-                        </Link>
-                    </div>
-                    <div>
-                        <div>{ this.props.item.state}</div>
-                        <div>
-                            { priceWithTwoDecimals }
-                            {/*freeShipping*/}
                         </div>
                         <div>
-                            <Link to={ '/items/' + this.props.item.id }>
-                                { this.props.item.title }
-                            </Link>
+
+                            <header><h1>{ this.props.item.title }</h1></header>
+                            { priceWithTwoDecimals }
+                            <div>
+                                <button>Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Descripción del producto</h2>
+                        <div>
+                            { this.props.item.description  }
                         </div>
                     </div>
                 </div>
@@ -43,5 +42,4 @@ class SearchResultItem extends Component {
         )
     }
 }
-
-export default SearchResultItem;
+export default Item;

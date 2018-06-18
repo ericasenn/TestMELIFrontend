@@ -9,7 +9,6 @@ class Breadcrumb extends Component {
         let categories;
 
         if (this.props.categories.length > 0) {
-            // qué pasa si vienen varios grupos de categories, que ejemplo hay?
             categories = this.props.categories[0].map((category, index) =>
                 <span key={ index }>
                     <span itemProp="title">{ category }</span>
