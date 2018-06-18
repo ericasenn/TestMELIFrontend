@@ -24,7 +24,7 @@ class App extends Component {
     render () {
         return (
             <Router>
-                <div className="wrap">
+                <div className="topbar">
                     <SearchBar onSearchChanged={this.onSearchChanged} history={this.history}/>
                     <Switch>
                         <Route path='/items/:id' component={ItemDescription} history={this.history}/>
