@@ -31,19 +31,34 @@ class SearchBar extends Component {
 
     render () {
         return (
-            <div>
-                <input
-                    value={this.state.searchTerm}
-                    placeholder={this.state.placeholder}
-                    onChange={event => {this.setState({searchTerm: event.target.value})}}
-                    onKeyPress={event => {
-                        if (event.key === 'Enter') {
-                            this.search()
-                        }
-                    }}
-                />
-            </div>
+            <form className="topbar" action="" role="search">
+                <div className="wrap">
+                    <div className="search">
+                        <div className="meli-logo"></div>
+                        <input
+                            value={this.state.searchTerm}
+                            placeholder={this.state.placeholder}
+                            onChange={event => {this.setState({searchTerm: event.target.value})}}
+                            onKeyPress={event => {
+                                if (event.key === 'Enter') {
+                                    this.search()
+                                }
+                            }}
+                        />
+                        <button onClick={ (event) => this.handleClick(event) } type="submit">
+                            <i className="search-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         )
+    }
+
+    handleClick(event) {
+        event.preventDefault()
+        if(this.state.searchTerm) {
+            this.search()
+        }
     }
 }
 
