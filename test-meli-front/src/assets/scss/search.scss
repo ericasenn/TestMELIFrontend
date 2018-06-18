@@ -1,0 +1,64 @@
+.topbar {
+  background: #FFE600;
+}
+
+.wrap {
+  width: 80%;
+  position: center;
+
+  .search {
+    position: relative;
+    overflow: visible;
+    height: 63px;
+
+    input {
+      position: relative;
+      font-size: 18px;
+      width: 100%;
+      top: 8px;
+      height: 38px;
+      padding: 3px 35px 3px 15px;
+      border-radius: 3px;
+      border: 0;
+      background-color: #EEEEEE;
+
+      &:focus {
+        box-shadow: 0 0 0 1px lighten(#3483fa, 15%);
+      }
+    }
+
+    button {
+      position: absolute;
+      font-size: 16px;
+      top: 8px;
+      right: 0;
+      width: 42px;
+      height: 38px;
+      border: 0;
+      background-color: #EEEEEE;
+      border-radius: 0 3px 3px 0;
+
+      span {
+        display: none;
+      }
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 12px;
+      top: 10px;
+      background-image: url('./assets/img/ic_Search.png');
+      height: 18px;
+      width: 18px;
+    }
+
+    .meli-logo {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      background-image: url('./assets/img/Logo_ML.png');
+      height: 18px;
+      width: 18px;
+    }
+  }
+}
