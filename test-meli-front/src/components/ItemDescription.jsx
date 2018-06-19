@@ -36,7 +36,7 @@ class ItemDescription extends Component {
         if (this.state.item !== undefined) {
             let item =  <Item item={ this.state.item } />;
             itemDescription =
-                <div>
+                <div className="white-wrap">
                     {/*<Breadcrumb categories={this.state.item.categories}> </Breadcrumb>*/}
                     { item }
                 </div>
