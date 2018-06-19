@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class SearchResultItem extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render () {
         let freeShipping;
         if (this.props.item.free_shipping) {

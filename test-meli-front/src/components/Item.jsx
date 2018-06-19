@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React  from 'react';
 
 
 class Item extends React.Component {
 
     render() {
-
         let price = this.props.item.price.amount+'';
         price = price.split('.');
 

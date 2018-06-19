@@ -1,33 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-const queryString = require('query-string');
 
 class SearchBar extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            placeholder: 'Nunca dejes de buscar',
-            searchTerm: queryString.parse(this.props.history.location.search).search
+            searchTerm: this.props.searchTerm
         };
-
-        if (this.state.searchTerm !== undefined) {
-            this.search();
-        }
     }
 
     search() {
-        const BASE_URL = 'http://localhost:3000/api/items';
-        let FETCH_URL = `${BASE_URL}?q=${this.state.searchTerm}`;
+        this.props.onSearchTriggered(this.state.searchTerm);
+    }
 
-        fetch(FETCH_URL, {
-            method: 'GET'
-        })
-            .then(response => response.json())
-            .then(json => {
-                this.props.onSearchChanged(this.state.searchTerm, json);
-            });
+    componentWillReceiveProps(newProps) {
+        if (newProps.searchTerm !== this.state.searchTerm) {
+            this.setState({searchTerm: newProps.searchTerm});
+        }
     }
 
     render () {
@@ -39,7 +30,7 @@ class SearchBar extends Component {
                             <Link to={'/'} className="meli-logo"></Link>
                             <input
                                 value={this.state.searchTerm}
-                                placeholder={this.state.placeholder}
+                                placeholder='Nunca dejes de buscar'
                                 onChange={event => {this.setState({searchTerm: event.target.value})}}
                                 onKeyPress={event => {
                                     if (event.key === 'Enter') {
@@ -61,8 +52,8 @@ class SearchBar extends Component {
     }
 
     handleClick(event) {
-        event.preventDefault();
         if(this.state.searchTerm) {
+            event.preventDefault();
             this.search()
         }
     }
