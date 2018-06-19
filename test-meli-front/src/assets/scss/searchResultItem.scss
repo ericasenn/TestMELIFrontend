@@ -1,0 +1,57 @@
+.white-wrap {
+  width: 80%;
+  margin: 1em auto;
+  padding: 1em 5%;
+  background: #fff;
+  position: relative;
+}
+
+.search-result-item {
+  line-height: 1;
+  list-style-type: none;
+  margin: 0 16px;
+  padding: 16px 0;
+  border-bottom: 0.5px solid #999999;
+
+  .result-picture {
+    img {
+      margin-right: 20px;
+      width: 180px;
+      height: 180px;
+    }
+  }
+
+  .result-info {
+    width: 90%;
+    padding-top: 15px;
+
+    a {
+      text-decoration: none;
+      color: #666666;
+    }
+
+    .result-shipping {
+      display: inline-block;
+      position: absolute;
+      margin: 3px 0 0 10px;
+      background-image: url('./assets/img/ic_shipping.png');
+      height: 18px;
+      width: 18px;
+    }
+
+    .result-price {
+      font-size: 24px;
+      margin-bottom: 32px;
+
+      sup {
+        font-size: 14px;
+        margin-left: 3px;
+      }
+    }
+
+    .result-title {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}

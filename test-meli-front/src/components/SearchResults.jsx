@@ -15,7 +15,9 @@ class SearchResults extends Component {
             searchResults =
                 <div>
                     <Breadcrumb categories={this.props.data.categories}> </Breadcrumb>
-                    { searchResultItems }
+                    <div className="white-wrap">
+                        { searchResultItems }
+                    </div>
                 </div>
         }
 

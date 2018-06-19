@@ -7,6 +7,10 @@ class SearchResultItem extends Component {
     }
 
     render () {
+        let freeShipping;
+        if (this.props.item.free_shipping) {
+            freeShipping = <div className="result-shipping" title="Envío gratis"></div>
+        }
 
         let price = this.props.item.price.amount+'';
         price = price.split('.');
@@ -17,27 +21,23 @@ class SearchResultItem extends Component {
             </span>;
 
         return (
-            <div>
-                <div>
-                    <div>
+            <div className="search-result-item">
+                <div className="result-picture">
+                    <Link to={ '/items/' + this.props.item.id }>
+                        <img src={ this.props.item.picture } alt={ this.props.item.title } />
+                    </Link>
+                </div>
+                <div className="clear"></div>
+                <div className="result-info">
+                    <div className="result-price">
+                        { priceWithTwoDecimals }
+                        { freeShipping }
+                    </div>
+                    <h3 className="result-title">
                         <Link to={ '/items/' + this.props.item.id }>
-                            <div>
-                                <img src={ this.props.item.picture } alt={ this.props.item.title } />
-                            </div>
+                            { this.props.item.title }
                         </Link>
-                    </div>
-                    <div>
-                        <div>{ this.props.item.state}</div>
-                        <div>
-                            { priceWithTwoDecimals }
-                            {/*freeShipping*/}
-                        </div>
-                        <div>
-                            <Link to={ '/items/' + this.props.item.id }>
-                                { this.props.item.title }
-                            </Link>
-                        </div>
-                    </div>
+                    </h3>
                 </div>
             </div>
         )

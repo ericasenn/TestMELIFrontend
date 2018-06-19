@@ -40,10 +40,7 @@ class ItemDescription extends Component {
                     {/*<Breadcrumb categories={this.state.item.categories}> </Breadcrumb>*/}
                     { item }
                 </div>
-        } else {
-            itemDescription = 'Algo';
         }
-
         return itemDescription;
     }
 }

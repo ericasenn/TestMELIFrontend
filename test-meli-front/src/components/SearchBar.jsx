@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 const queryString = require('query-string');
 
@@ -35,7 +36,7 @@ class SearchBar extends Component {
                 <div className="topbar">
                     <div className="wrap">
                         <div className="search">
-                            <div className="meli-logo"></div>
+                            <Link to={'/'} className="meli-logo"></Link>
                             <input
                                 value={this.state.searchTerm}
                                 placeholder={this.state.placeholder}

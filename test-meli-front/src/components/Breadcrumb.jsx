@@ -10,16 +10,15 @@ class Breadcrumb extends Component {
 
         if (this.props.categories.length > 0) {
             categories = this.props.categories[0].map((category, index) =>
-                <span key={ index }>
-                    <span itemProp="title">{ category }</span>
-                    {this.props.categories[0].length === index  ? <span></span>: <span> > </span> }
-                </span>
+                <li key={ index }>
+                    <span>{ category }</span>
+                </li>
             )
         }
 
         return (
 
-            <div>{ categories }</div>
+            <ul className="breadcrumb">{ categories }</ul>
 
         )
     }
