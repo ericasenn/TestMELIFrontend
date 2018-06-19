@@ -43,6 +43,7 @@ class SearchBar extends Component {
                                 onChange={event => {this.setState({searchTerm: event.target.value})}}
                                 onKeyPress={event => {
                                     if (event.key === 'Enter') {
+                                        event.preventDefault();
                                         this.search()
                                     }
                                 }}
@@ -60,7 +61,7 @@ class SearchBar extends Component {
     }
 
     handleClick(event) {
-        event.preventDefault()
+        event.preventDefault();
         if(this.state.searchTerm) {
             this.search()
         }
